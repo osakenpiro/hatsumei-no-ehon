@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>はつめいたちのじこしょうかい — 人類と発明の100万年史</title>
+<meta property="og:title" content="はつめいたちのじこしょうかい — 人類と発明の100万年史">
+<meta property="og:description" content="ヒノちゃん、モジさん、ハグルマ、テッポー、ネット先輩 — 5つのはつめいが自己紹介する絵本。え：チャッピー　ぶん：クロード　かんしゅう：ケンシロウ">
+<meta property="og:url" content="https://osakenpiro.github.io/hatsumei-no-ehon/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="はつめいたちのじこしょうかい">
+<meta name="twitter:description" content="ヒノちゃん・モジさん・ハグルマ・テッポー・ネット先輩 — 人類と発明の100万年をたどる絵本。">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&family=Kosugi+Maru&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFF8F0;
+    --warm-brown: #8B4513;
+    --fire-orange: #E65100;
+    --text-amber: #BF360C;
+    --wheel-wood: #795548;
+    --gun-slate: #455A64;
+    --net-blue: #0277BD;
+    --page-shadow: rgba(139, 69, 19, 0.15);
+    --text-dark: #3E2723;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(135deg, #FBE9E7 0%, #FFF8F0 50%, #FFF3E0 100%);
+    font-family: 'Zen Maru Gothic', 'Kosugi Maru', sans-serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(230,81,0,0.12) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(2,119,189,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(255,248,240,0.8) 0%, transparent 70%);
+  }
+  .cover-title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    line-height: 1.4;
+    color: #4E342E;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.8);
+  }
+  .cover-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #4E342E;
+    opacity: 0.7;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .cover-characters {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cover-char {
+    font-size: 3.5rem;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  }
+  .cover-char:nth-child(2) { animation-delay: 0.5s; }
+  .cover-char:nth-child(3) { animation-delay: 1s; }
+  .cover-char:nth-child(4) { animation-delay: 1.5s; }
+  .cover-char:nth-child(5) { animation-delay: 2s; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .scroll-hint {
+    position: relative;
+    z-index: 1;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #4E342E;
+    opacity: 0.5;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+  }
+  .series-badge {
+    position: relative;
+    z-index: 1;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(78,52,46,0.08);
+    border: 1px solid rgba(78,52,46,0.15);
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    color: #4E342E;
+    text-align: center;
+    line-height: 1.6;
+  }
+  .series-badge a { color: #4E342E; text-decoration: underline; }
+
+  .page {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 3rem 2.5rem;
+    background: var(--cream);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px var(--page-shadow), inset 0 0 60px rgba(139,69,19,0.03);
+    position: relative;
+    border: 1px solid rgba(139,69,19,0.1);
+  }
+  .page::before {
+    content: '';
+    position: absolute;
+    left: 2rem; top: 0; bottom: 0;
+    width: 2px;
+    background: rgba(139,69,19,0.08);
+  }
+  .page-number { position: absolute; bottom: 1rem; right: 1.5rem; font-size: 0.8rem; color: var(--warm-brown); opacity: 0.4; }
+
+  .chapter-header { text-align: center; margin-bottom: 2rem; }
+  .chapter-icon { font-size: 4rem; display: block; margin-bottom: 0.5rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+  .chapter-title { font-size: 1.8rem; font-weight: 900; line-height: 1.3; }
+  .chapter-subtitle { font-size: 1rem; opacity: 0.6; margin-top: 0.3rem; }
+
+  .color-fire { color: var(--fire-orange); }
+  .color-text { color: var(--text-amber); }
+  .color-wheel { color: var(--wheel-wood); }
+  .color-gun { color: var(--gun-slate); }
+  .color-net { color: var(--net-blue); }
+
+  .char-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 5px solid;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .char-card.fire { border-color: var(--fire-orange); }
+  .char-card.text { border-color: var(--text-amber); }
+  .char-card.wheel { border-color: var(--wheel-wood); }
+  .char-card.gun { border-color: var(--gun-slate); }
+  .char-card.net { border-color: var(--net-blue); }
+
+  .char-name { font-size: 1.4rem; font-weight: 900; display: flex; align-items: center; gap: 0.5rem; }
+  .char-species { font-size: 0.8rem; opacity: 0.5; font-weight: 400; font-style: italic; }
+  .char-quote { font-size: 1.1rem; margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.02); border-radius: 0.5rem; position: relative; line-height: 1.7; }
+  .char-quote::before { content: '「'; font-size: 1.5rem; opacity: 0.3; position: absolute; top: 0.3rem; left: 0.5rem; }
+
+  .relationship { display: flex; align-items: center; gap: 0.8rem; margin: 1rem 0; font-size: 0.95rem; }
+  .rel-label { font-weight: 700; white-space: nowrap; }
+  .rel-bar { flex: 1; height: 12px; background: #EEE; border-radius: 6px; overflow: hidden; }
+  .rel-fill { height: 100%; border-radius: 6px; }
+  .rel-fill.bestfriend { background: linear-gradient(90deg, #FFAB00, #E65100); }
+  .rel-fill.scholar { background: linear-gradient(90deg, #BF360C, #E65100); }
+  .rel-fill.bold { background: linear-gradient(90deg, #6D4C41, #795548); }
+  .rel-fill.conflict { background: linear-gradient(90deg, #455A64, #78909C); }
+  .rel-fill.cool { background: linear-gradient(90deg, #0277BD, #4FC3F7); }
+
+  .story { font-size: 1.05rem; line-height: 2; margin: 1.2rem 0; }
+  .story strong { color: var(--warm-brown); }
+
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(230,81,0,0.08), rgba(78,52,46,0.08));
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border: 1px dashed rgba(139,69,19,0.2);
+  }
+  .highlight-box h3 { font-size: 1.1rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+
+  .timeline { position: relative; padding-left: 2rem; margin: 1.5rem 0; }
+  .timeline::before { content: ''; position: absolute; left: 0.5rem; top: 0; bottom: 0; width: 3px; background: rgba(139,69,19,0.15); border-radius: 2px; }
+  .timeline-item { position: relative; margin-bottom: 1.2rem; padding-left: 1rem; }
+  .timeline-item::before { content: ''; position: absolute; left: -1.75rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--warm-brown); border: 2px solid var(--cream); }
+  .timeline-year { font-weight: 900; font-size: 0.85rem; color: var(--warm-brown); }
+  .timeline-text { font-size: 0.95rem; line-height: 1.6; }
+
+  .item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 0.8rem; margin: 1.5rem 0; }
+  .item-card { background: white; border-radius: 0.8rem; padding: 0.8rem 0.5rem; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: transform 0.2s; }
+  .item-card:hover { transform: translateY(-3px); }
+  .item-emoji { font-size: 2.5rem; display: block; margin-bottom: 0.3rem; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.08)); }
+  .item-label { font-size: 0.8rem; font-weight: 700; color: var(--text-dark); opacity: 0.7; line-height: 1.3; }
+  .item-grid-title { font-size: 1rem; font-weight: 900; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+
+  .finale { text-align: center; padding: 3rem 2rem; max-width: 800px; margin: 3rem auto; }
+  .finale-title { font-size: 1.8rem; font-weight: 900; color: #4E342E; margin-bottom: 1.5rem; }
+  .finale-message { font-size: 1.1rem; line-height: 2; color: var(--text-dark); opacity: 0.8; }
+  .emoji-parade { font-size: 2.5rem; margin: 2rem 0; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .colophon { margin-top: 3rem; font-size: 0.8rem; opacity: 0.4; }
+  .series-links { margin-top: 2rem; font-size: 0.95rem; line-height: 2; }
+  .series-links a { color: #4E342E; text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .page { margin: 1.5rem 0.8rem; padding: 2rem 1.5rem; }
+    .page::before { left: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-title">
+    はつめいたちの じこしょうかい<br>
+    <span style="font-size: 0.6em; opacity: 0.7;">— 人類と発明の 100万年史 —</span>
+  </div>
+  <div class="cover-subtitle">え：チャッピー　ぶん：クロード　かんしゅう：ケンシロウ</div>
+  <div class="cover-characters">
+    <span class="cover-char">🔥</span>
+    <span class="cover-char">✍️</span>
+    <span class="cover-char">⚙️</span>
+    <span class="cover-char">💥</span>
+    <span class="cover-char">🌐</span>
+  </div>
+  <div class="series-badge">📚 じこしょうかいシリーズ 第5巻<br><a href="https://osakenpiro.github.io/jikoshoukai/">シリーズ一覧</a></div>
+  <div class="scroll-hint">↓ スクロールして よんでね ↓</div>
+</section>
+
+<!-- PROLOGUE -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">💡</span>
+    <div class="chapter-title">はじめに</div>
+    <div class="chapter-subtitle">にんげんの「つくる」ちから</div>
+  </div>
+  <p class="story">
+    にんげんの からだは、べつに つよくない。<br>
+    ライオンより おそく、ワシより 目が わるく、クマより ちからが ない。
+  </p>
+  <p class="story">
+    でも にんげんには「<strong>つくる</strong>」ちからが あった。<br>
+    ないものを かんがえて、かたちに すること。<br>
+    それが「はつめい」。
+  </p>
+  <p class="story">
+    はつめいは、にんげんの からだを こえさせた。<br>
+    火で 夜を てらし、文字で 記憶を のこし、車輪で 大地を わたった。
+  </p>
+  <p class="story">
+    これは、<strong>にんげんの あたまの なかから うまれた ものたち</strong>の おはなし。
+  </p>
+  <span class="page-number">1</span>
+</section>
+
+<!-- CHAPTER 1: FIRE -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🔥</span>
+    <div class="chapter-title color-fire">だい1しょう：ヒノちゃん</div>
+    <div class="chapter-subtitle">— いちばん さいしょの ともだち —</div>
+  </div>
+
+  <div class="char-card fire">
+    <div class="char-name">🔥 ヒノちゃん <span class="char-species">Fire</span></div>
+    <div class="char-quote">
+      わたしは こわい？ うん、こわいよ。<br>
+      でも わたしが いなかったら、きみたちは くらやみの なかで、なまにくを たべてたんだよ。
+    </div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill bestfriend" style="width: 99%"></div></div>
+      <span>★★★★★</span>
+    </div>
+  </div>
+
+  <p class="story">
+    ヒノちゃんは <strong>火</strong>。にんげんの <strong>いちばん さいしょの はつめい</strong>。<br>
+    （正確には「発明」というより「制御」— 自然の火を つかまえて、おさえて、つかった。）
+  </p>
+  <p class="story">
+    火は 3つの ことを かえた。<br>
+    <strong>① 料理</strong> — 加熱すると 栄養の 吸収率が あがり、脳が おおきくなった。<br>
+    <strong>② 暖</strong> — 寒い 場所にも すめるようになった。<br>
+    <strong>③ 光</strong> — 夜が つかえるようになった。集まって、はなして、かんがえる 時間が ふえた。
+  </p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">100万年前〜</div>
+      <div class="timeline-text">ホモ・エレクトスが 火を使用。人類の脳が 大きくなりはじめる。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">40万年前</div>
+      <div class="timeline-text">焚き火の 周囲に 定住するようになる。「かこむ」文化の はじまり。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1万年前</div>
+      <div class="timeline-text">火で 陶器を やく。食料の 貯蔵が 可能に。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">産業革命</div>
+      <div class="timeline-text">蒸気機関 = 火の ちからで 水を 沸かし、機械を 動かす。</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <h3>💡 サッちゃん＋ムギちゃんとの 三者コンボ</h3>
+    <p class="story" style="margin: 0;">
+      火（ヒノちゃん）× 酵母（サッちゃん）× 小麦（ムギちゃん）= <strong>パンを焼く</strong>。<br>
+      3つのシリーズの 主人公が 出会って、人類の 主食が うまれた。
+    </p>
+    <div class="item-grid-title" style="margin-top:1rem;">🔥 ヒノちゃんが くれたもの</div>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🍳</span><span class="item-label">料理</span></div>
+      <div class="item-card"><span class="item-emoji">🕯️</span><span class="item-label">あかり</span></div>
+      <div class="item-card"><span class="item-emoji">🏭</span><span class="item-label">蒸気機関</span></div>
+      <div class="item-card"><span class="item-emoji">🧱</span><span class="item-label">陶器・レンガ</span></div>
+      <div class="item-card"><span class="item-emoji">⚗️</span><span class="item-label">金属の精錬</span></div>
+      <div class="item-card"><span class="item-emoji">🎆</span><span class="item-label">花火</span></div>
+    </div>
+  </div>
+  <span class="page-number">2–3</span>
+</section>
+
+<!-- CHAPTER 2: WRITING -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">✍️</span>
+    <div class="chapter-title color-text">だい2しょう：モジさん</div>
+    <div class="chapter-subtitle">— わすれない ちから —</div>
+  </div>
+
+  <div class="char-card text">
+    <div class="char-name">✍️ モジさん <span class="char-species">Writing</span></div>
+    <div class="char-quote">
+      にんげんの のうは、わすれるように できている。<br>
+      だから わたしを つくったんでしょう？ —— きおくを、からだの そとに おくために。
+    </div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill scholar" style="width: 99%"></div></div>
+      <span>★★★★★</span>
+    </div>
+  </div>
+
+  <p class="story">
+    モジさんは <strong>文字</strong>。にんげんの <strong>記憶の 外部装置</strong>。
+  </p>
+  <p class="story">
+    文字が できる前、すべての 知識は だれかの あたまの なかに あった。<br>
+    その人が しんだら、知識も きえた。<br>
+    文字が うまれて、はじめて 知識が <strong>「いきのこる」</strong> ようになった。
+  </p>
+  <p class="story">
+    最初の 文字は 約5200年前、メソポタミアの <strong>楔形文字</strong>（くさびがたもじ）。<br>
+    穀物（ムギちゃん！）の 在庫を かぞえるための「<strong>メモ</strong>」だった。<br>
+    文学でも 哲学でもなく、<strong>在庫管理</strong>。文字は ビジネスから うまれた。
+  </p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">紀元前3200年</div>
+      <div class="timeline-text">メソポタミアで 楔形文字。在庫管理のメモ。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">紀元前3000年</div>
+      <div class="timeline-text">エジプトで ヒエログリフ。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">紀元前1500年ごろ</div>
+      <div class="timeline-text">フェニキア文字 → アルファベットの 祖先。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">105年</div>
+      <div class="timeline-text">中国で 蔡倫が 紙を改良。文字の 大量コピーが 可能に。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1440年</div>
+      <div class="timeline-text">グーテンベルクの 活版印刷。知識の 民主化。</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <h3>📝 モジさん ここが すごい</h3>
+    <p class="story" style="margin: 0;">
+      文字のおかげで、<strong>死んだ人の 考えを 読める</strong>。<br>
+      2000年前の ひとの なやみも、よろこびも、文字が あるから わかる。<br>
+      文字は <strong>タイムマシン</strong> でもある。
+    </p>
+    <div class="item-grid-title" style="margin-top:1rem;">✍️ モジさんが くれたもの</div>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">📜</span><span class="item-label">粘土板</span></div>
+      <div class="item-card"><span class="item-emoji">📖</span><span class="item-label">本</span></div>
+      <div class="item-card"><span class="item-emoji">📰</span><span class="item-label">新聞</span></div>
+      <div class="item-card"><span class="item-emoji">📱</span><span class="item-label">スマホ</span></div>
+      <div class="item-card"><span class="item-emoji">🏛️</span><span class="item-label">法律</span></div>
+      <div class="item-card"><span class="item-emoji">🧮</span><span class="item-label">数学</span></div>
+    </div>
+  </div>
+  <span class="page-number">4–5</span>
+</section>
+
+<!-- CHAPTER 3: WHEEL -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">⚙️</span>
+    <div class="chapter-title color-wheel">だい3しょう：ハグルマ</div>
+    <div class="chapter-subtitle">— せかいを ころがした まる —</div>
+  </div>
+
+  <div class="char-card wheel">
+    <div class="char-name">⚙️ ハグルマ <span class="char-species">Wheel</span></div>
+    <div class="char-quote">
+      ぼくは ただの まる。でも この まるが なかったら、<br>
+      きみたちは いまも ぜんぶ かついで はこんでたよ。
+    </div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill bold" style="width: 85%"></div></div>
+      <span>★★★★☆</span>
+    </div>
+  </div>
+
+  <p class="story">
+    ハグルマは <strong>車輪</strong>。約5500年前に メソポタミアで うまれた。
+  </p>
+  <p class="story">
+    おもしろいことに、車輪は <strong>自然界に 存在しない</strong>。<br>
+    足、翼、ヒレ — 動物は いろんな うごきかたを 発明したが、車輪を つくった 生きものは いない。<br>
+    車輪は <strong>100% にんげんの オリジナル</strong>。
+  </p>
+  <p class="story">
+    車輪 × ウマ（ハヤテ）= <strong>チャリオット</strong>（戦車）。これが 古代の 最強兵器になった。<br>
+    車輪 × 蒸気機関（ヒノちゃん）= <strong>蒸気機関車</strong>。これが 産業革命を はこんだ。
+  </p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">紀元前3500年</div>
+      <div class="timeline-text">メソポタミアで 車輪つき荷車。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">紀元前2000年</div>
+      <div class="timeline-text">チャリオット（戦車）。ウマ × 車輪の 合体。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">中世</div>
+      <div class="timeline-text">水車・風車。回転運動で 粉を ひく。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1804年</div>
+      <div class="timeline-text">蒸気機関車。車輪が レールの うえを はしる。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">現代</div>
+      <div class="timeline-text">タイヤ、ギア、タービン。あらゆる機械に 車輪の子孫が いる。</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <h3>💡 ハグルマの ひみつ</h3>
+    <p class="story" style="margin: 0;">
+      自然界に 存在しないのに、<strong>人間の 文明は 車輪なしには ありえない</strong>。<br>
+      時計の 歯車も、自動車の タイヤも、ハードディスクの 回転も、<br>
+      ぜんぶ ハグルマの 子孫。
+    </p>
+    <div class="item-grid-title" style="margin-top:1rem;">⚙️ ハグルマが くれたもの</div>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🛒</span><span class="item-label">荷車</span></div>
+      <div class="item-card"><span class="item-emoji">🏎️</span><span class="item-label">自動車</span></div>
+      <div class="item-card"><span class="item-emoji">🚂</span><span class="item-label">蒸気機関車</span></div>
+      <div class="item-card"><span class="item-emoji">⚙️</span><span class="item-label">歯車</span></div>
+      <div class="item-card"><span class="item-emoji">🎡</span><span class="item-label">観覧車</span></div>
+      <div class="item-card"><span class="item-emoji">💿</span><span class="item-label">CD・レコード</span></div>
+    </div>
+  </div>
+  <span class="page-number">6–7</span>
+</section>
+
+<!-- CHAPTER 4: GUNPOWDER -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">💥</span>
+    <div class="chapter-title color-gun">だい4しょう：テッポー</div>
+    <div class="chapter-subtitle">— はなびにも じゅうにも なる —</div>
+  </div>
+
+  <div class="char-card gun">
+    <div class="char-name">💥 テッポー <span class="char-species">Gunpowder &amp; Firearms</span></div>
+    <div class="char-quote">
+      ぼくを つくったのは おまえたち。<br>
+      はなびに したのも おまえたち。てっぽうに したのも おまえたち。<br>
+      ぼくに つみは ない。……ほんとうに？
+    </div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill conflict" style="width: 45%"></div></div>
+      <span>★★☆☆☆</span>
+    </div>
+  </div>
+
+  <p class="story">
+    テッポーは <strong>火薬</strong> — そして そこから うまれた <strong>銃</strong>。
+  </p>
+  <p class="story">
+    火薬は 9世紀の 中国で、<strong>不老不死の くすり</strong>を さがしていた 錬丹術師が ぐうぜん 発見した。<br>
+    「永遠に 生きる」ための 研究が、「一瞬で 殺す」道具を うんだ。<br>
+    人類史上 もっとも 皮肉な 発明。
+  </p>
+  <p class="story">
+    でも 火薬は <strong>花火</strong> でもある。<br>
+    同じ ものが、空を いろどることも、いのちを うばうことも できる。<br>
+    <strong>技術そのものに 善悪は ない。つかいかた だけが ある。</strong>
+  </p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">9世紀</div>
+      <div class="timeline-text">中国で 火薬 発見。もとは 錬丹術の 副産物。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">10世紀</div>
+      <div class="timeline-text">中国で 花火。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">13世紀</div>
+      <div class="timeline-text">モンゴル帝国経由で 火薬が ヨーロッパへ。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">14世紀〜</div>
+      <div class="timeline-text">銃と大砲の 登場。騎士の 時代が おわる。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1945年</div>
+      <div class="timeline-text">火薬の延長線上に 原子爆弾。</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <h3>💡 テッポーが つきつける 問い</h3>
+    <p class="story" style="margin: 0;">
+      <strong>おなじ ものが、はなびにも じゅうにも なる</strong>。<br>
+      火薬を わるいと いうなら、花火も わるいのか？<br>
+      道具に つみは あるのか？ つかう にんげんに だけ つみが あるのか？<br>
+      テッポーは、いまも にんげんに <strong>問いつづけている</strong>。
+    </p>
+    <div class="item-grid-title" style="margin-top:1rem;">💥 テッポーの ふたつの かお</div>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🎆</span><span class="item-label">花火</span></div>
+      <div class="item-card"><span class="item-emoji">🔫</span><span class="item-label">銃</span></div>
+      <div class="item-card"><span class="item-emoji">💣</span><span class="item-label">爆弾</span></div>
+      <div class="item-card"><span class="item-emoji">⛏️</span><span class="item-label">採掘（発破）</span></div>
+      <div class="item-card"><span class="item-emoji">🚀</span><span class="item-label">ロケット推進</span></div>
+      <div class="item-card"><span class="item-emoji">🏗️</span><span class="item-label">ダイナマイト</span></div>
+    </div>
+  </div>
+  <span class="page-number">8–9</span>
+</section>
+
+<!-- CHAPTER 5: INTERNET -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🌐</span>
+    <div class="chapter-title color-net">だい5しょう：ネット先輩</div>
+    <div class="chapter-subtitle">— ぐんじぎじゅつが せかいを つないだ —</div>
+  </div>
+
+  <div class="char-card net">
+    <div class="char-name">🌐 ネット先輩 <span class="char-species">Internet</span></div>
+    <div class="char-quote">
+      おれは もともと ミサイルが とんできても 通信が たえないように つくられた。<br>
+      ぐんじぎじゅつ だったんだ。<br>
+      ……それが いま、ネコの どうがを おくるために つかわれてる。わるくない。
+    </div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill cool" style="width: 85%"></div></div>
+      <span>★★★★☆</span>
+    </div>
+  </div>
+
+  <p class="story">
+    ネット先輩は <strong>インターネット</strong>。<br>
+    1969年、アメリカ国防総省の <strong>ARPANET</strong> として うまれた。
+  </p>
+  <p class="story">
+    核戦争で ひとつの 基地が やられても、ほかの 基地と 通信が つづくように。<br>
+    <strong>「中心がない ネットワーク」</strong> — それが インターネットの 設計思想。
+  </p>
+  <p class="story">
+    それが いまでは 50億人を つなぎ、<br>
+    モジさん（文字）の 究極の 進化系 になっている。<br>
+    ミケ先輩（ネコ）は、ネット先輩の おかげで 世界で いちばん 有名な 動物になった。
+  </p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">1969年</div>
+      <div class="timeline-text">ARPANET。最初のメッセージは「LO」（LOGINの途中でクラッシュ）。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1991年</div>
+      <div class="timeline-text">ティム・バーナーズ＝リーが WWW を発明。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2004年〜</div>
+      <div class="timeline-text">SNS時代。Facebook、Twitter（現X）。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2020年〜</div>
+      <div class="timeline-text">パンデミックで オンライン化が 一気に 加速。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">現在</div>
+      <div class="timeline-text">AI時代。ネット先輩は いま、「考える」力も もちはじめた。</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <h3>💡 ネット先輩の すごい ところ</h3>
+    <p class="story" style="margin: 0;">
+      ネット先輩は、<strong>これまでの 全はつめいを つなげた</strong>。<br>
+      モジさんの 文字を 光速で おくり、<br>
+      ハグルマの 物流を 最適化し、<br>
+      テッポーの 情報を 管理する。<br>
+      <strong>はつめいの はつめい</strong> — それが インターネット。
+    </p>
+    <div class="item-grid-title" style="margin-top:1rem;">🌐 ネット先輩が くれたもの</div>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">📧</span><span class="item-label">メール</span></div>
+      <div class="item-card"><span class="item-emoji">🐱</span><span class="item-label">ネコ動画</span></div>
+      <div class="item-card"><span class="item-emoji">🛒</span><span class="item-label">ネットショッピング</span></div>
+      <div class="item-card"><span class="item-emoji">📱</span><span class="item-label">SNS</span></div>
+      <div class="item-card"><span class="item-emoji">🤖</span><span class="item-label">AI</span></div>
+      <div class="item-card"><span class="item-emoji">🎮</span><span class="item-label">オンラインゲーム</span></div>
+    </div>
+  </div>
+  <span class="page-number">10–11</span>
+</section>
+
+<!-- EPILOGUE -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">📖</span>
+    <div class="chapter-title">おわりに：はつめいたちの おやくそく</div>
+  </div>
+
+  <p class="story">
+    ヒノちゃんに おそわったこと — <strong>「いちばん ふるい ともだちは、いちばん こわい ともだち」</strong>。<br>
+    モジさんに おそわったこと — <strong>「わすれないことが、ちからになる」</strong>。<br>
+    ハグルマに おそわったこと — <strong>「しぜんに ないものを つくる、それが にんげん」</strong>。<br>
+    テッポーに おそわったこと — <strong>「おなじものが、はなびにも じゅうにも なる」</strong>。<br>
+    ネット先輩に おそわったこと — <strong>「つながることは、ちからにも きけんにも なる」</strong>。
+  </p>
+
+  <div class="highlight-box">
+    <h3>🔑 3つの きほん</h3>
+    <p class="story" style="margin: 0;">
+      <strong>①  道具に善悪はない</strong> — 火は あたためもするし やきもする。つかうのは にんげん。<br>
+      <strong>②  不可逆</strong> — 発明は もとに もどせない。火を しらなかった じだいには もどれない。<br>
+      <strong>③  累積</strong> — 発明は かさなる。火 × 車輪 × 文字 × 火薬 × ネット = いまの せかい。
+    </p>
+  </div>
+
+  <p class="story" style="text-align:center; margin-top: 2rem; font-size: 1.2rem; font-weight: 700; color: #4E342E;">
+    にんげんの からだは よわい。<br>
+    でも にんげんの あたまは、<br>
+    世界を つくりかえる ちからを もっている。
+  </p>
+  <span class="page-number">12</span>
+</section>
+
+<!-- FINALE -->
+<section class="finale">
+  <div class="emoji-parade">
+    <span>🔥</span><span>✍️</span><span>⚙️</span><span>💥</span><span>🌐</span>
+  </div>
+  <div class="finale-title">— おしまい —</div>
+  <div class="finale-message">
+    「はつめいたちの じこしょうかい」<br>
+    え：チャッピー　ぶん：クロード　かんしゅう：ケンシロウ
+  </div>
+  <div class="series-links">
+    📚 じこしょうかいシリーズ<br>
+    <a href="https://osakenpiro.github.io/jikoshoukai/">シリーズ一覧</a><br>
+    <a href="https://osakenpiro.github.io/kin-no-ehon/">第1巻「きんたちの じこしょうかい」</a><br>
+    <a href="https://osakenpiro.github.io/mushi-no-ehon/">第2巻「むしたちの じこしょうかい」</a><br>
+    <a href="https://osakenpiro.github.io/kemono-no-ehon/">第3巻「けものたちの じこしょうかい」</a><br>
+    <a href="https://osakenpiro.github.io/kusaki-no-ehon/">第4巻「くさきたちの じこしょうかい」</a>
+  </div>
+  <div class="colophon">
+    ※ このおはなしは わかりやすさを ゆうせんして かんりゃくかしています。<br>
+    がくじゅつてきな せいかくさについては せんもんしょを ごさんしょうください。
+  </div>
+</section>
+
+</body>
+</html>
